@@ -79,6 +79,7 @@ HERO SECTION
 }
 .arrow.left{
     left: 20px;
+    z-index: 100;
 }
 .arrow.right{
     right: 20px;
