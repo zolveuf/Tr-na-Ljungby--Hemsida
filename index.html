@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Träna Ljungby</title>
+  <!--FONT LINKS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!--CSS LINKS-->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+
+  <!--HEADER SECTION-->
+
+  <header class="header">
+    <div class="container">
+        <h1 class="logo"><a href="">TRÄNA WELLNESS</a></h1>
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+    </div>
+    <nav class="nav" id="nav">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li><a href="#home">HEM</a></li>
+            <li><a href="#about">BOKA TID</a></li>
+            <li><a href="#services">OM <span class="green-text">TRÄNA</span></a></li>
+            <li><a href="#contact">KONTAKTA OSS</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+        <h1><span class="green-text">Träna</span> hårt <br> med <span class="green-text">Träna!</span></h1>
+        <p>Med Sveriges bästa lokaler och tränare, kan <br>du träna som en boss!</p>
+        <button class="btn">
+          Bli medlem!
+        </button>
+    </div>
+    <div class="hero-container">
+      <div class="bg-2"></div>
+      <div class="bg-3"></div>
+      <div class="bg-1"></div>
+    </div>
+    <button class="arrow left" id="prev">❮</button>
+    <button class="arrow right" id="next">❯</button>
+  </section>
+
+  <section class="services">
+
+
+  </section>
+
+  
+  
+
+
+
+  
+
+
+
+<script>
+
+// Get the hamburger button, the close button, and the navigation menu
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+const closeBtn = document.getElementById('close-btn');
+
+// Open the menu when the hamburger is clicked
+hamburger.addEventListener('click', () => {
+    nav.classList.add('open');
+});
+
+// Close the menu when the close button is clicked
+closeBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+});
+
+</script>
+
+<script>
+  const slides = document.querySelectorAll('.hero-container div');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  // Show the next slide
+  next.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    showSlide(currentSlide);
+  });
+
+  // Show the previous slide
+  prev.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Loop back to the last slide
+    showSlide(currentSlide);
+  });
+
+  // Initialize the first slide
+  showSlide(currentSlide);
+</script>
+
+<script>
+// Select the header and hamburger menu
+const header = document.querySelector('.header');
+
+// Add a scroll event listener to the window
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('transparent'); // Make header transparent
+    } else {
+        header.classList.remove('transparent');
+    }
+});
+
+hamburger.addEventListener('click', () => {
+    nav.classList.add('open');
+    document.body.classList.add('menu-open'); // Disable vertical scrolling
+});
+
+closeBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+    document.body.classList.remove('menu-open'); // Re-enable vertical scrolling
+});
+
+</script>
+
+
+
+</body>
+</html>

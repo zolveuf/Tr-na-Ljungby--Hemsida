@@ -1,0 +1,241 @@
+/*==============================
+MAIN RULES AND STYLING
+================================*/
+html, body{
+    margin: 0;
+    transition: 0.3s all ease-in-out;
+    color: white;
+    font-family: "Roboto", serif;
+    padding: 0; 
+    overflow-x: hidden; /* Disables horizontal scrolling */
+}
+*{
+    box-sizing: border-box;
+}
+:root{
+    --color1: #fff;
+    --color2: #78b834;
+}
+h1{
+    font-size: 4rem;
+    font-weight: 700;
+}
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+
+/*==============================
+NAVBAR AND HEADER STYLINGS
+================================*/
+.header{
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+.header.transparent{
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s all ease-in-out;
+}
+.logo a{
+    color: var(--color2);
+}
+.logo:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine){
+    .logo:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .logo{
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: 0.3s all ease-in-out;
+    }
+}
+.hamburger{
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+@media (hover: hover) and (pointer: fine){
+    .hamburger:hover{
+        color: var(--color2);
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .hamburger{
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+    }
+}
+.hamburger.white {
+    color: white;
+}
+.close-btn{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+@media (hover: hover) and (pointer: fine){
+    .close-btn:hover{
+        color: var(--color2);
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .close-btn{
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+}
+.nav{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: black; 
+    z-index: 9999;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); 
+    transition: right 0.5s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nav.open{
+    right: 0; 
+    backdrop-filter: blur(5px); 
+}
+.nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    width: 100%;
+    text-align: center;
+}
+.nav ul li{
+    margin: 1rem 0;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+@media (hover: hover) and (pointer: fine){
+    .nav ul li a:hover{
+        color: var(--color2);
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+}
+.green-text{
+    color: var(--color2);
+}
+body.menu-open{
+    overflow-y: hidden; 
+}
+
+/*==============================
+BUTTONS AND HOVER EFFECTS
+================================*/
+.btn{
+    border: none;
+    border-radius: 50px; 
+    padding: 15px 30px; 
+    color: #000; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; 
+}
+@media (hover: hover) and (pointer: fine){
+    .btn:hover{
+        background-color: var(--color2);
+        color: #fff;
+        transform: scale(1.05); 
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .btn{
+        border: none;
+        border-radius: 50px; 
+        padding: 15px 30px; 
+        color: #000; 
+        font-size: 1.2rem; 
+        font-weight: bold; 
+        text-transform: uppercase; 
+        cursor: pointer; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out; 
+    }
+}
+

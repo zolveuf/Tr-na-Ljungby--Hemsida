@@ -1,0 +1,154 @@
+/*==============================
+HERO SECTION
+================================*/
+.bg-2{
+    width: 100%; height: 407px;
+    background: url('../img/hero-img2.jpg') -10000px -10000px;
+}
+.bg-1{
+    width: 100%; height: 407px;
+    background: url('../img/hero-img5.jpg') -830px -10px;
+}
+.bg-3{
+    width: 800px; height: 407px;
+    background: url('../img/hero-img4.jpg') -1650px -10px;
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+.hero-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: brightness(30%);
+}
+.hero-container div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100vw; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat; 
+    opacity: 0; /* Hide images initially */
+    transition: opacity 0.5s ease-in-out;
+}
+.hero-container .active{
+    opacity: 1; /* Show only the active image */
+}
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    transition: 0.3s all ease-in-out;
+}
+@media (hover: hover) and (pointer: fine){
+    .arrow:hover{
+        color: var(--color2);
+    }
+}
+@media (hover: none) and (pointer: coarse){
+    .arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 10;
+        transition: 0.3s all ease-in-out;
+    }
+}
+.arrow.left{
+    left: 20px;
+}
+.arrow.right{
+    right: 20px;
+}
+.hero-container .active{
+    opacity: 1;
+}
+.hero-text{
+    position: absolute;
+    top: 120px;
+    left: 150px;
+    z-index: 100;
+    width: 100%;
+}
+.hero-text h1{
+    margin-bottom: 0px;
+}
+@media (max-width: 900px) {
+    .hero-text{
+        position: absolute; /* Use absolute positioning */
+        top: 50%; /* Position 50% from the top */
+        left: 50%; /* Position 50% from the left */
+        transform: translate(-50%, -50%); /* Adjust position back by half its width and height */
+        text-align: center;
+    }
+}
+@media (max-width: 750px) {
+    .hero-text h1{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 520px) {
+    .hero-text p{
+        font-size: 1rem;
+    }
+    .arrow{
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+}
+@media (max-width: 430px) {
+    .hero-text p{
+        font-size: 0.9rem;
+    }
+    .arrow.left{
+        left: 5px;
+    }
+    .arrow.right{
+        right: 5px;
+    }
+    .hamburger{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 370px) {
+    .hero-text{
+        width: 70%;
+    }
+    .hero-text h1{
+        font-size: 2.5rem;
+    }
+}
+
+.services{
+    height: 100vh;
+}
+
+
+
+
+
+  
+  
