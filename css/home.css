@@ -82,6 +82,7 @@ HERO SECTION
 }
 .arrow.right{
     right: 20px;
+    z-index: 100;
 }
 .hero-container .active{
     opacity: 1;
