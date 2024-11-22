@@ -94,7 +94,7 @@ NAVBAR AND HEADER STYLINGS
     background: none;
     border: none;
     position: absolute;
-    right: 1.5em;
+    right: 2%;
     color: #fff;
     font-size: 3rem;
     cursor: pointer;
@@ -110,7 +110,7 @@ NAVBAR AND HEADER STYLINGS
         background: none;
         border: none;
         position: absolute;
-        right: 1.5em;
+        right: 2%;
         color: #fff;
         font-size: 3rem;
         cursor: pointer;
@@ -123,7 +123,7 @@ NAVBAR AND HEADER STYLINGS
 .close-btn{
     position: absolute;
     top: 20px;
-    right: 1.5em;
+    right: 2%;
     background: none;
     border: none;
     color: #fff;
@@ -139,8 +139,8 @@ NAVBAR AND HEADER STYLINGS
 @media (hover: none) and (pointer: coarse){
     .close-btn{
         position: absolute;
-        top: 20px;
-        right: 1.5em;
+        top: 2%;
+        right: 2%;
         background: none;
         border: none;
         color: #fff;
@@ -203,6 +203,15 @@ NAVBAR AND HEADER STYLINGS
 }
 body.menu-open{
     overflow-y: hidden; 
+}
+@media (max-width: 600px) {
+    .hamburger{
+        right: 0.2%;
+    }
+    .close-btn{
+        top: 20px;
+        right: 0.2%;
+    }
 }
 
 /*==============================
