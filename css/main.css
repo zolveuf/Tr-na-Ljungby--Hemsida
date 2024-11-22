@@ -94,7 +94,7 @@ NAVBAR AND HEADER STYLINGS
     background: none;
     border: none;
     position: absolute;
-    right: 2%;
+    right: 1.5rem;
     color: #fff;
     font-size: 3rem;
     cursor: pointer;
@@ -110,7 +110,7 @@ NAVBAR AND HEADER STYLINGS
         background: none;
         border: none;
         position: absolute;
-        right: 2%;
+        right: 1.5rem;
         color: #fff;
         font-size: 3rem;
         cursor: pointer;
@@ -123,7 +123,7 @@ NAVBAR AND HEADER STYLINGS
 .close-btn{
     position: absolute;
     top: 20px;
-    right: 2%;
+    right: 1.5rem;
     background: none;
     border: none;
     color: #fff;
@@ -140,7 +140,7 @@ NAVBAR AND HEADER STYLINGS
     .close-btn{
         position: absolute;
         top: 20px;
-        right: 2%;
+        right: 1.5rem;
         background: none;
         border: none;
         color: #fff;
