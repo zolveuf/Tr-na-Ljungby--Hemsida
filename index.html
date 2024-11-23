@@ -18,6 +18,21 @@
   <link rel="preload" as="image" href="img/hero-img2.jpg">
   <link rel="preload" as="image" href="img/hero-img3.jpg">
 
+  <!--PRELOAD HERO ANIMATION-->
+  <style>
+      .hero-container{
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: 0.7s all ease-in-out;
+          filter: brightness(20%);
+      }
+      .hero-container.animation{
+          height: 98%;
+      }
+  </style>
+
 </head>
 
 <body>
@@ -63,10 +78,8 @@
     <button class="arrow right" id="next">❯</button>
   </section>
 
-
-
-
-
+  <!--BECOME MEMBER SECTION-->
+  
   <section class="membership">
     <div class="text-box">
       <h2>Välkommen till <span class="green-text">Träna</span> – där träning blir en livsstil!</h2>
@@ -80,30 +93,25 @@
 
 
 
-  
 
-
+<!--JAVASCRIPT-->
 
 <script>
 
-// Get the hamburger button, the close button, and the navigation menu
+// Hamburger and close button
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 const closeBtn = document.getElementById('close-btn');
 
-// Open the menu when the hamburger is clicked
 hamburger.addEventListener('click', () => {
     nav.classList.add('open');
 });
 
-// Close the menu when the close button is clicked
 closeBtn.addEventListener('click', () => {
     nav.classList.remove('open');
 });
 
-</script>
-
-<script>
+// Buttons to change hero picture
   const slides = document.querySelectorAll('.hero-container div');
   const prev = document.getElementById('prev');
   const next = document.getElementById('next');
@@ -116,35 +124,42 @@ closeBtn.addEventListener('click', () => {
     });
   }
 
-  // Show the next slide
   next.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    currentSlide = (currentSlide + 1) % slides.length; 
     showSlide(currentSlide);
   });
 
-  // Show the previous slide
   prev.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Loop back to the last slide
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length; 
     showSlide(currentSlide);
   });
 
-  // Initialize the first slide
   showSlide(currentSlide);
-</script>
 
-<script>
-// Select the header and hamburger menu
+
+// Make header transparent when scrolling below 50px
 const header = document.querySelector('.header');
 
-// Add a scroll event listener to the window
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.classList.add('transparent'); // Make header transparent
+        header.classList.add('transparent'); 
     } else {
         header.classList.remove('transparent');
     }
 });
 
+// Hero animation
+const heroContainer = document.querySelector('.hero-container');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) { 
+        heroContainer.classList.add('animation'); 
+    } else {
+        heroContainer.classList.remove('animation');
+    }
+});
+
+// Will eventually not be used
 hamburger.addEventListener('click', () => {
     nav.classList.add('open');
     document.body.classList.add('menu-open'); // Disable vertical scrolling
@@ -156,12 +171,11 @@ closeBtn.addEventListener('click', () => {
 });
 
 
-
-// Add a scroll event listener to the window
+// Make hamburger menu black when scrolling below 50px
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.classList.add('transparent'); // Make header transparent
-        hamburger.classList.add('black');   // Make hamburger white
+        header.classList.add('transparent');
+        hamburger.classList.add('black');   
     } else {
         header.classList.remove('transparent');
         hamburger.classList.remove('black');

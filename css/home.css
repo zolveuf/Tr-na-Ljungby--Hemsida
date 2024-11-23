@@ -20,13 +20,6 @@ HERO SECTION
     overflow: hidden;
     background-repeat: no-repeat;
 }
-.hero-container{
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: brightness(20%);
-}
 .hero-container div{
     position: absolute;
     top: 0;
@@ -223,6 +216,37 @@ MEMBERSHIP SECTION
 
     }
 }
+
+.hero-container div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center; /* Start at center */
+    background-repeat: no-repeat;
+  }
+  
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hero-container .bg-1 {
+    background-image: url('../img/hero-img1.jpg');
+  }
+  
+  .hero-container .bg-2 {
+    background-image: url('../img/hero-img2.jpg');
+  }
+  
+  .hero-container .bg-3 {
+    background-image: url('../img/hero-img3.jpg');
+  }
+  
 
   
 
