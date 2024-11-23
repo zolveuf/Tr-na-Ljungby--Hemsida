@@ -37,6 +37,17 @@ p{
 a{
     text-decoration: none;
 }
+.copyright{
+    color: grey;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.6rem;
+}
+.copyright a{
+    text-decoration: underline;
+}
 
 /*==============================
 NAVBAR AND HEADER STYLINGS
