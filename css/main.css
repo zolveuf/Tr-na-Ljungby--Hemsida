@@ -5,17 +5,18 @@ html, body{
     margin: 0;
     transition: 0.3s all ease-in-out;
     color: white;
-    font-family: "Roboto", serif;
     padding: 0; 
-    background-color: #000;
+    background-color: #e0e0e0;
     overflow-x: hidden; /* Disables horizontal scrolling */
 }
 *{
     box-sizing: border-box;
+    font-family: "Roboto", serif;
 }
 :root{
-    --color1: #fff;
+    --color1: #000;
     --color2: #78b834;
+    --border-radius: 30px;
 }
 h1{
     font-size: 4rem;
@@ -50,13 +51,15 @@ NAVBAR AND HEADER STYLINGS
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    transition: 0.5s all ease-in-out;
+    transition: 0.3s all ease-in-out;
 }
 .header.transparent{
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(253, 253, 253, 0.8);
     color: white;
+    padding: 2rem 0;
     backdrop-filter: blur(10px);
 }
+
 .container{
     display: flex;
     justify-content: space-between;
@@ -100,6 +103,9 @@ NAVBAR AND HEADER STYLINGS
     cursor: pointer;
     transition: 0.3s all ease-in-out;
 }
+.hamburger.black {
+    color: black;
+}
 @media (hover: hover) and (pointer: fine){
     .hamburger:hover{
         color: var(--color2);
@@ -117,16 +123,13 @@ NAVBAR AND HEADER STYLINGS
         transition: 0.3s all ease-in-out;
     }
 }
-.hamburger.white {
-    color: white;
-}
 .close-btn{
     position: absolute;
     top: 20px;
     right: 2%;
     background: none;
     border: none;
-    color: #fff;
+    color: #000;
     font-size: 3rem;
     cursor: pointer;
     transition: color 0.3s;
@@ -143,7 +146,7 @@ NAVBAR AND HEADER STYLINGS
         right: 2%;
         background: none;
         border: none;
-        color: #fff;
+        color: #000;
         font-size: 3rem;
         cursor: pointer;
         transition: color 0.3s;
@@ -155,7 +158,7 @@ NAVBAR AND HEADER STYLINGS
     right: -100%;
     height: 100vh;
     width: 100%;
-    background: black; 
+    background: #fff; 
     z-index: 9999;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); 
     transition: right 0.5s ease; 
@@ -179,7 +182,7 @@ NAVBAR AND HEADER STYLINGS
 }
 .nav ul li a{
     text-decoration: none;
-    color: #fff;
+    color: #000;
     font-weight: bold;
     font-size: 2rem;
     transition: color 0.3s;
@@ -213,14 +216,9 @@ body.menu-open{
         right: 0.2%;
     }
 }
-@media (max-width: 1000px){
-    .nav ul li a{
-        font-size: 2.2rem;
-    }
-}
 @media (max-width: 1499px){
     .nav ul li a{
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 }
 
@@ -261,4 +259,15 @@ BUTTONS AND HOVER EFFECTS
         transition: all 0.3s ease-in-out; 
     }
 }
+@media (max-width: 800px){
+    .btn{
+    border: none;
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    color: #000; 
+    font-size: 1rem; 
+    }
+}
+
+
 
