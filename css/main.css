@@ -195,7 +195,7 @@ NAVBAR AND HEADER STYLINGS
 @media (hover: none) and (pointer: coarse){
     .nav ul li a{
         text-decoration: none;
-        color: #fff;
+        color: #000;
         font-weight: bold;
         font-size: 2rem;
         transition: color 0.3s;
