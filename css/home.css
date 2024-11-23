@@ -218,10 +218,9 @@ MEMBERSHIP SECTION
         max-width: 220px;
     }
     .membership{
-        height: 50vh; 
-    }
-    .membership{
+        height: 40vh;
         margin: 1rem;
+
     }
 }
 
