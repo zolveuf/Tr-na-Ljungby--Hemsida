@@ -4,10 +4,14 @@ MAIN RULES AND STYLING
 html, body{
     margin: 0;
     transition: 0.3s all ease-in-out;
-    color: white;
+    color: #000;
     padding: 0; 
-    background-color: #e0e0e0;
+    background-color: #fff;
     overflow-x: hidden; /* Disables horizontal scrolling */
+}
+body.dark-mode{
+    background-color: #000;
+    color: #fff;
 }
 *{
     box-sizing: border-box;
@@ -23,8 +27,10 @@ h1{
     font-weight: 700;
 }
 h2{
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 h3{
     font-size: 1.5rem;
@@ -33,28 +39,23 @@ h3{
 p{
     font-size: 1.2rem;
     font-weight: 400;
+    color: #fff;
 }
 a{
     text-decoration: none;
 }
-.copyright{
-    color: grey;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.6rem;
+.green-text{
+    color: var(--color2);
 }
-.copyright a{
-    text-decoration: underline;
+.fat-font{
+    font-weight: 900 ;
 }
-
 /*==============================
 NAVBAR AND HEADER STYLINGS
 ================================*/
+/*This is not yet made initially for phone view*/
 .header{
     color: #fff;
-    padding: 1rem 0;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -67,16 +68,17 @@ NAVBAR AND HEADER STYLINGS
 .header.transparent{
     background: rgba(253, 253, 253, 0.8);
     color: white;
-    padding: 2rem 0;
     backdrop-filter: blur(10px);
 }
-
+/*DARK MODE*/
+body.dark-mode .header.transparent{
+    background: rgba(5, 5, 5, 0.8);
+}
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 .logo{
@@ -87,21 +89,10 @@ NAVBAR AND HEADER STYLINGS
 .logo a{
     color: var(--color2);
 }
-.logo:hover{
-    transform: scale(1.05);
-    cursor: pointer;
-}
 @media (hover: hover) and (pointer: fine){
     .logo:hover{
         transform: scale(1.05);
         cursor: pointer;
-    }
-}
-@media (hover: none) and (pointer: coarse){
-    .logo{
-        font-size: 1.5rem;
-        font-weight: bold;
-        transition: 0.3s all ease-in-out;
     }
 }
 .hamburger{
@@ -122,16 +113,13 @@ NAVBAR AND HEADER STYLINGS
         color: var(--color2);
     }
 }
-@media (hover: none) and (pointer: coarse){
-    .hamburger{
-        background: none;
-        border: none;
-        position: absolute;
-        right: 2%;
-        color: #fff;
-        font-size: 3rem;
-        cursor: pointer;
-        transition: 0.3s all ease-in-out;
+/*DARK MODE*/
+body.dark-mode .hamburger.black{
+    color: #fff;
+}
+@media (hover: hover) and (pointer: fine){
+    body.dark-mode .hamburger.black:hover{
+        color: var(--color2);
     }
 }
 .close-btn{
@@ -150,17 +138,13 @@ NAVBAR AND HEADER STYLINGS
         color: var(--color2);
     }
 }
-@media (hover: none) and (pointer: coarse){
-    .close-btn{
-        position: absolute;
-        top: 2%;
-        right: 2%;
-        background: none;
-        border: none;
-        color: #000;
-        font-size: 3rem;
-        cursor: pointer;
-        transition: color 0.3s;
+/*DARK MODE*/
+body.dark-mode .close-btn{
+    color: #fff;
+}
+@media (hover: hover) and (pointer: fine){
+    body.dark-mode .close-btn:hover{
+        color: var(--color2);
     }
 }
 .nav{
@@ -170,13 +154,17 @@ NAVBAR AND HEADER STYLINGS
     height: 100vh;
     width: 100%;
     background: #fff; 
-    z-index: 9999;
+    z-index: 10000000000000000;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); 
     transition: right 0.5s ease; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+/*DARK MODE*/
+body.dark-mode .nav{
+    background-color: #000;
 }
 .nav.open{
     right: 0; 
@@ -194,7 +182,6 @@ NAVBAR AND HEADER STYLINGS
 .nav ul li a{
     text-decoration: none;
     color: #000;
-    font-weight: bold;
     font-size: 2rem;
     transition: color 0.3s;
 }
@@ -203,36 +190,154 @@ NAVBAR AND HEADER STYLINGS
         color: var(--color2);
     }
 }
-@media (hover: none) and (pointer: coarse){
-    .nav ul li a{
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-        font-size: 2rem;
-        transition: color 0.3s;
+/*DARK MODE*/
+body.dark-mode .nav ul li a{
+    color: #fff;
+}
+@media (hover: hover) and (pointer: fine){
+    body.dark-mode .nav ul li a:hover{
+        color: var(--color2);
     }
 }
-.green-text{
-    color: var(--color2);
-}
-body.menu-open{
-    overflow-y: hidden; 
-}
-@media (max-width: 600px) {
+@media (max-width: 320px){
     .hamburger{
-        right: 0.2%;
+        font-size: 1.7rem;
+    }
+    .logo{
+        font-size: 1.4rem;
+    }
+    .nav ul li a{
+        font-size: 1.5rem;
     }
     .close-btn{
-        top: 20px;
-        right: 0.2%;
+        font-size: 1.7rem;
+        top: 30px;
     }
 }
-@media (max-width: 1499px){
+@media (min-width: 321px) and (max-width: 480px){
+    .close-btn{
+        top: 25px;
+    }
+    .logo{
+        font-size: 1.4rem;
+    }
     .nav ul li a{
+        font-size: 1.7rem;
+    }
+    .hamburger{
+        font-size: 1.7rem;
+    }
+}
+@media (min-width: 481px) and (max-width: 600px){
+    .logo{
+        font-size: 1.9rem;
+    }
+    .close-btn{
+        top: 25px;
+    }
+    .nav ul li a{
+        font-size: 1.8rem;
+    }
+    .hamburger{
         font-size: 2rem;
     }
 }
-
+@media (min-width: 601px) and (max-width: 768px){
+    .logo{
+        font-size: 2rem;
+    }
+    .close-btn{
+        top: 40px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+    .logo{
+        font-size: 2.4rem;
+    }
+    .close-btn{
+        top: 40px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1280px){
+    .logo{
+        font-size: 2.9rem;
+    }
+    .close-btn{
+        top: 40px;
+    }
+}
+@media (min-width: 1281px) and (max-width: 1440px){
+    .logo{
+        font-size: 3.2rem;
+    }
+    .close-btn{
+        top: 40px;
+        font-size: 4rem;
+    }
+    .hamburger{
+        font-size: 4rem;
+    }
+}
+@media (min-width: 1441px) and (max-width: 1600px){
+    .logo{
+        font-size: 3.8rem;
+    }
+    .close-btn{
+        top: 40px;
+        font-size: 4.5rem;
+    }
+    .hamburger{
+        font-size: 4.5rem;
+    }
+    .nav ul li a{
+        font-size: 2.5rem;
+    }
+}
+@media (min-width: 1601px) and (max-width: 1920px){
+    .logo{
+        font-size: 4rem;
+    }
+    .close-btn{
+        top: 40px;
+        font-size: 4.8rem;
+    }
+    .hamburger{
+        font-size: 4.8rem;
+    }
+    .nav ul li a{
+        font-size: 2.8rem;
+    }
+}
+@media (min-width: 1921px) and (max-width: 2560px){
+    .logo{
+        font-size: 5rem;
+    }
+    .close-btn{
+        top: 60px;
+        font-size: 5rem;
+    }
+    .hamburger{
+        font-size: 5rem;
+    }
+    .nav ul li a{
+        font-size: 3.8rem;
+    }
+}
+@media (min-width: 2561px){
+    .logo{
+        font-size: 6rem;
+    }
+    .close-btn{
+        top: 60px;
+        font-size: 6rem;
+    }
+    .hamburger{
+        font-size: 6rem;
+    }
+    .nav ul li a{
+        font-size: 4.5rem;
+    }
+}
 /*==============================
 BUTTONS AND HOVER EFFECTS
 ================================*/
@@ -252,31 +357,153 @@ BUTTONS AND HOVER EFFECTS
     .btn:hover{
         background-color: var(--color2);
         color: #fff;
-        transform: scale(1.05); 
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+        transform: translateY(-5px); /* Elevate the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
     }
 }
-@media (hover: none) and (pointer: coarse){
-    .btn{
-        border: none;
-        border-radius: 50px; 
-        padding: 15px 30px; 
-        color: #000; 
+/*DARK MODE*/
+body.dark-mode .btn{
+    border: none;
+    border-radius: 50px; 
+    padding: 15px 30px; 
+    color: #fff; 
+    background-color: #000;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; 
+}
+@media (hover: hover) and (pointer: fine){
+    body.dark-mode .btn:hover{
         background-color: var(--color2);
-        font-size: 1.2rem; 
-        font-weight: bold; 
-        text-transform: uppercase; 
-        cursor: pointer; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease-in-out; 
+        color: #fff;
+        transform: translateY(-5px); /* Elevate the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
     }
 }
-@media (max-width: 800px){
+@media (min-width: 300px) and (max-width: 480px){
     .btn{
-    padding: 10px 20px; 
-    font-size: 1rem; 
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    body.dark-mode .btn{
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1000px){
+    .btn{
+        padding: 15px 30px;
+        font-size: 1.3rem;
+    }
+    body.dark-mode .btn{
+        padding: 15px 30px;
+        font-size: 1.3rem;
+    }
+}
+@media (min-width: 1300px){
+    .btn{
+        padding: 25px 55px;
+        font-size: 1.6rem;
+    }
+    body.dark-mode .btn{
+        padding: 25px 55px;
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 1800px){
+    .btn{
+        padding: 30px 60px;
+        font-size: 2.2rem;
+    }
+    body.dark-mode .btn{
+        padding: 30px 60px;
+        font-size: 2.2rem;
+    }
+}
+@media (min-width: 2200px){
+    .btn{
+        padding: 40px 80px;
+        font-size: 2.5rem;
+    }
+    body.dark-mode .btn{
+        padding: 40px 80px;
+        font-size: 2.5rem;
+    }
+}
+@media (min-width: 2561px){
+    .btn{
+        padding: 50px 90px;
+        font-size: 2.5rem;
+    }
+    body.dark-mode .btn{
+        padding: 50px 90px;
+        font-size: 2.5rem;
+    }
+}
+.theme-button {
+    position: absolute;
+    z-index: 201300321;
+    right: 11%;
+    background: none; 
+    border: none; 
+    font-size: 1.5rem; 
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+  }
+@media (hover: hover) and (pointer: fine){
+    .theme-button:hover {
+        transform: rotate(20deg);
+      }
+    }
+
+@media (min-width: 481px) and (max-width: 600px){
+    .theme-button{
+        font-size: 1.9rem;
     }
 }
 
 
-
+@media (min-width: 601px) and (max-width: 768px){
+    .theme-button{
+        font-size: 2.2rem;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+    .theme-button{
+        font-size: 2.3rem;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1280px){
+    .theme-button{
+        font-size: 2.5rem;
+    }
+}
+@media (min-width: 1281px) and (max-width: 1440px){
+    .theme-button{
+        font-size: 3.3rem;
+    }
+}
+@media (min-width: 1441px) and (max-width: 1600px){
+    .theme-button{
+        font-size: 4rem;
+    }
+}
+@media (min-width: 1601px) and (max-width: 1920px){
+    .theme-button{
+        font-size: 4.8rem;
+    }
+}
+@media (min-width: 1921px) and (max-width: 2560px){
+    .theme-button{
+        font-size: 4.8rem;
+    }
+}
+@media (min-width: 2561px){
+    .theme-button{
+        font-size: 6rem;
+    }
+}
+  
