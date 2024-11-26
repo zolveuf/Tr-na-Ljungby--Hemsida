@@ -1,18 +1,6 @@
 /*==============================
 HERO SECTION
 ================================*/
-.bg-2{
-    width: 100%; height: 407px;
-    background: url('../img/1.png') -10000px -10000px;
-}
-.bg-1{
-    width: 100%; height: 407px;
-    background: url('../img/3.png') -830px -10px;
-}
-.bg-3{
-    width: 100%; height: 407px;
-    background: url('../img/hero-img3.jpg') -1650px -10px;
-}
 .hero{
     position: relative;
     text-align: center;
