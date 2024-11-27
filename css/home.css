@@ -276,7 +276,7 @@ body.dark-mode .news-title{
         max-width: 100%; /* Allow container to take full width */
     }
 }
-@media (min-width: 1000px) and (max-width: 1400px){
+@media (min-width: 1000px) and (max-width: 3000px){
     .news-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Two equal columns */

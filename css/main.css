@@ -506,4 +506,60 @@ body.dark-mode .btn{
         font-size: 6rem;
     }
 }
+/*==============================
+FOOTER SECTION
+================================*/
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-section{
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
+}
+.footer-section ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-section h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color2);
+}
+.footer-section p,
+.footer-section a{
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.footer-section a:hover{
+    color: #fff;
+}
+.social-links a{
+    display: inline-block;
+    margin-right: 10px;
+    transition: 0.3s all ease-in-out;
+}
+.social-links img{
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+.footer-bottom{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
   
